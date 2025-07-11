@@ -1,0 +1,12 @@
+node_modules
+.nuxt
+.output
+.DS_Store
+
+pnpm-lock.yaml
+package-lock.json
+
+## Panda
+styled
+styled-system
+styled-system-studio
