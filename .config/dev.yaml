@@ -1,0 +1,17 @@
+orm:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: root
+  dbName: nuxt_admin_template
+  debug: true
+
+hash:
+  salt: $2b$10$v0UAl9V6T7OpZAlYZKvc5O==
+  cost: 10
+
+jwt:
+  key: $2b$10$nxi79AIrqNBKgNVTcBnvQu==
+  expiresIn: 7d
+  validation:
+    leeway: 9

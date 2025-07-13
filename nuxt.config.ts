@@ -20,7 +20,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-11',
   nitro: {
     imports: {
-      dirs: ['./server/container/**/*'],
+      dirs: [
+        './server/composables/**/*',
+        './server/container/**/*',
+      ],
     },
     experimental: {
       asyncContext: true,
