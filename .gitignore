@@ -2,6 +2,7 @@ node_modules
 .nuxt
 .output
 .DS_Store
+logs
 
 pnpm-lock.yaml
 package-lock.json
@@ -10,3 +11,4 @@ package-lock.json
 styled
 styled-system
 styled-system-studio
+design

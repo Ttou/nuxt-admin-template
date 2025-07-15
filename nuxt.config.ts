@@ -13,9 +13,8 @@ export default defineNuxtConfig({
     'plus-pro-components/index.css',
     '@/assets/styles/global.css',
   ],
-  srcDir: './web',
   alias: {
-    styled: resolve('./styled'),
+    design: resolve('./design'),
   },
   compatibilityDate: '2025-07-11',
   nitro: {
