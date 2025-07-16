@@ -1,15 +1,14 @@
 import '#shared/bigintPolyfill'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const userAuth = useCookie('token')
-  const config = useRuntimeConfig()
-
   const $customFetch = $fetch.create({
-    baseURL: config.baseUrl as string ?? 'https://api.nuxt.com',
+    baseURL: '/api',
     onRequest({ request, options, error }) {
-      if (userAuth.value) {
+      const mainStore = useMainStore()
+
+      if (mainStore.token) {
         // Add Authorization header
-        options.headers.set('Authorization', `Bearer ${userAuth.value}`)
+        options.headers.set('Authorization', `Bearer ${mainStore.token}`)
       }
     },
     onResponse({ response }) {

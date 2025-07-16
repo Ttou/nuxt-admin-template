@@ -1,9 +1,14 @@
-import { NuxtPage } from '#components'
+import { NuxtLayout, NuxtPage } from '#components'
+import { ElConfigProvider } from 'element-plus'
 
 export default defineComponent({
   render() {
     return (
-      <NuxtPage />
+      <ElConfigProvider>
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </ElConfigProvider>
     )
   },
 })

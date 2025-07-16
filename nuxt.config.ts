@@ -6,12 +6,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@element-plus/nuxt',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
     'vue-types-nuxt',
   ],
   css: [
     'element-plus/dist/index.css',
     'plus-pro-components/index.css',
-    '@/assets/styles/global.css',
+    '~/assets/css/global.css',
   ],
   alias: {
     design: resolve('./design'),
@@ -41,6 +43,9 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+  pinia: {
+    storesDirs: ['./app/stores/**'],
   },
   vueTypes: {
     shim: true,

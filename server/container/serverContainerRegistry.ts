@@ -11,6 +11,7 @@ const registerData = {
 type IRegisterDataKey = keyof typeof registerData
 
 export const serverContainerRegistry = Object.entries(registerData).reduce((acc, [key, value]) => {
+  // @ts-ignore
   acc[key] = value()[1]
   return acc
 }, {} as { [key in IRegisterDataKey]: ReturnType<typeof registerData[key]>[1] })
