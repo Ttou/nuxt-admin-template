@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@element-plus/nuxt',
     '@pinia/nuxt',
+    '@vueuse/nuxt',
     'pinia-plugin-persistedstate/nuxt',
     'vue-types-nuxt',
   ],
