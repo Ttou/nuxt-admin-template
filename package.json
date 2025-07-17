@@ -41,6 +41,7 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
     "@element-plus/nuxt": "^1.1.4",
     "@nuxt/eslint": "^1.5.2",
     "@pandacss/dev": "0.54.0",

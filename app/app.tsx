@@ -1,6 +1,4 @@
-// FIX types
-import '../.nuxt/types/imports.d.ts'
-import '../node_modules/pinia-plugin-persistedstate/dist/index.d.ts'
+/// <reference types="../.nuxt/types/imports.d.ts" />
 
 import { NuxtLayout, NuxtPage } from '#components'
 import { ElConfigProvider } from 'element-plus'

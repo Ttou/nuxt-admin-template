@@ -1,6 +1,8 @@
-import { defineStore } from 'pinia'
-import { LocaleEnum } from '#shared/enums'
+/// <reference types="../../node_modules/pinia-plugin-persistedstate/dist/index.d.ts" />
+
 import type { ILocaleEnum } from '#shared/enums'
+import { LocaleEnum } from '#shared/enums'
+import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', () => {
   const token = ref('')
