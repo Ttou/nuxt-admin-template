@@ -1,25 +1,28 @@
 /// <reference types="../../node_modules/pinia-plugin-persistedstate/dist/index.d.ts" />
 
 import type { ILocaleEnum } from '#shared/enums'
-import { LocaleEnum } from '#shared/enums'
+import { pick } from 'es-toolkit'
 import { defineStore } from 'pinia'
 
 export const useMainStore = defineStore('main', () => {
-  const token = ref('')
-  const locale = ref<ILocaleEnum>(LocaleEnum.ZH_CN)
+  const { locale, messages, setLocale } = useI18n()
+
+  const elLocale = computed(() => {
+    return pick(messages.value[locale.value], ['name', 'el', 'plus'])
+  })
 
   function changeLocale(value: ILocaleEnum) {
-    locale.value = value
+    setLocale(value)
   }
 
   return {
-    token,
     locale,
+    elLocale,
     changeLocale,
   }
 }, {
   persist: {
-    pick: ['token', 'locale'],
+    pick: [],
     storage: piniaPluginPersistedstate.localStorage(),
   },
 })

@@ -5,10 +5,13 @@ export default defineNuxtPlugin((nuxtApp) => {
     baseURL: '/api',
     onRequest({ request, options, error }) {
       const mainStore = useMainStore()
+      const userStore = useUserStore()
 
-      if (mainStore.token) {
+      options.headers.set('Accept-Language', mainStore.locale)
+
+      if (userStore.token) {
         // Add Authorization header
-        options.headers.set('Authorization', `Bearer ${mainStore.token}`)
+        options.headers.set('Authorization', `Bearer ${userStore.token}`)
       }
     },
     onResponse({ response }) {

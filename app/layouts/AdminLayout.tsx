@@ -1,11 +1,20 @@
+import { LocaleSelect } from '#components'
+import { ElSpace } from 'element-plus'
 import { PlusLayout } from 'plus-pro-components'
 
 export default defineComponent({
   render() {
     return (
-      <PlusLayout>
+      <PlusLayout hasBreadcrumb={false}>
         {{
-          ['default']: () => this.$slots.default?.(),
+          'header-right': () => (
+            <>
+              <ElSpace>
+                <LocaleSelect />
+              </ElSpace>
+            </>
+          ),
+          'default': () => this.$slots.default?.(),
         }}
       </PlusLayout>
     )

@@ -1,7 +1,7 @@
 import { Enum } from './base'
 
 export const LocaleEnum = Enum({
-  ZH_CN: { label: '中文', value: 'zh-cn' },
+  ZH_CN: { label: '简体中文', value: 'zh-cn' },
   EN_US: { label: 'English', value: 'en-us' },
 })
 
