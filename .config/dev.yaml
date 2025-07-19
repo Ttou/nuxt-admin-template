@@ -15,3 +15,8 @@ jwt:
   expiresIn: 7d
   validation:
     leeway: 9
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  db: 0

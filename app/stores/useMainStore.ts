@@ -18,9 +18,4 @@ export const useMainStore = defineStore('main', () => {
     elLocale,
     changeLocale,
   }
-}, {
-  persist: {
-    pick: [],
-    storage: piniaPluginPersistedstate.localStorage(),
-  },
 })

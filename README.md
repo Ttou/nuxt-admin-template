@@ -1,3 +1,3 @@
 ## TODO
 
-[ ] app 目录下自动导入的方法类型提示不存在
+[ ] pinia-plugin-persistedstate 会影响全局类型

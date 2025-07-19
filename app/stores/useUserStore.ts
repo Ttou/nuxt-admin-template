@@ -1,12 +1,9 @@
+import { useStorage } from '@vueuse/core'
+
 export default defineStore('user', () => {
-  const token = ref('')
+  const token = useStorage('token', '')
 
   return {
     token,
   }
-}, {
-  persist: {
-    pick: ['token'],
-    storage: piniaPluginPersistedstate.localStorage(),
-  },
 })
