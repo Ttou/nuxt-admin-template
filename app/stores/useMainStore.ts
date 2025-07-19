@@ -1,5 +1,3 @@
-/// <reference types="../../node_modules/pinia-plugin-persistedstate/dist/index.d.ts" />
-
 import type { ILocaleEnum } from '#shared/enums'
 import { pick } from 'es-toolkit'
 import { defineStore } from 'pinia'

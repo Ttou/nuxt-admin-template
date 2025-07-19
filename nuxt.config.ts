@@ -50,7 +50,7 @@ export default defineNuxtConfig({
   },
   eslint: {
     config: {
-      stylistic: true,
+      standalone: false,
     },
   },
   i18n: {
@@ -60,6 +60,9 @@ export default defineNuxtConfig({
       name: v.label,
       file: `${v.value}.ts`,
     })),
+    experimental: {
+      localeDetector: 'localeDetector.ts',
+    },
   },
   pinia: {
     storesDirs: ['./app/stores/**'],
