@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     '~/assets/css/global.css',
   ],
   alias: {
-    '#design': resolve('./design'),
+    design: resolve('./design'),
   },
   compatibilityDate: '2025-07-11',
   nitro: {
