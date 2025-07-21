@@ -1,4 +1,3 @@
-import '#shared/bigintPolyfill'
 import type { H3Event, EventHandlerRequest, H3Error } from 'h3'
 
 declare module 'h3' {
@@ -13,6 +12,18 @@ declare module 'h3' {
     // currentUser: SysUserEntity
   }
 }
+
+if (!Reflect.has(BigInt.prototype, 'toJSON')) {
+  Reflect.defineProperty(BigInt.prototype, 'toJSON', {
+    value: function (this: bigint) {
+      return this.toString()
+    },
+    writable: true,
+    enumerable: false,
+    configurable: true,
+  })
+}
+
 
 // 接口请求
 const isApi = ({ path }: H3Event<EventHandlerRequest>) => {
@@ -41,8 +52,9 @@ export default defineNitroPlugin(async (nitroApp) => {
     }
   })
 
+  // @ts-ignore
   nitroApp.hooks.hook('error', (error: H3Error, { event }) => {
-    logger.error(error.stack, getLogInfo(event))
+    logger.error(error.stack!, getLogInfo(event!))
   })
 
   nitroApp.hooks.hook('close', async () => {
