@@ -1,6 +1,22 @@
-import z from 'zod/v4'
+import { IsNumber } from "class-validator"
+import { Transform } from 'class-transformer'
 
-export const PageDto = z.object({
-  page: z.number().default(1),
-  pageSize: z.number().default(10),
-})
+export class BasePageDto {
+  @IsNumber()
+  page!: number
+
+  @IsNumber()
+  pageSize!: number
+}
+
+export class BaseIdDto {
+  @IsNumber()
+  @Transform(({ value }) => BigInt(value))
+  id!: bigint
+}
+
+export class BaseIdsDto {
+  @IsNumber({}, { each: true })
+  @Transform(({ value }) => value.map((v: any) => BigInt(v)))
+  ids!: bigint[]
+}

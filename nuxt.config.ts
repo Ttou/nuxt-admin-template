@@ -1,4 +1,6 @@
+import { readFile, writeFile } from 'node:fs/promises'
 import { createResolver } from '@nuxt/kit'
+import { Oxc } from 'unplugin-oxc'
 import { LocaleEnum } from './shared/enums'
 
 const { resolve } = createResolver(import.meta.url)
@@ -27,6 +29,18 @@ export default defineNuxtConfig({
     design: resolve('./design'),
   },
   compatibilityDate: '2025-07-11',
+  hooks: {
+    'prepare:types': async () => {
+      const pkgPath = 'node_modules/tslib/package.json'
+
+      const pkgFile = await readFile(pkgPath, { encoding: 'utf-8' })
+      const pkgData = JSON.parse(pkgFile)
+
+      delete pkgData.exports['.'].import.node
+
+      await writeFile(pkgPath, JSON.stringify(pkgData, null, 2))
+    },
+  },
   nitro: {
     imports: {
       dirs: [
@@ -37,6 +51,28 @@ export default defineNuxtConfig({
     experimental: {
       asyncContext: true,
       tasks: true,
+    },
+    rollupConfig: {
+      plugins: [
+        {
+          name: 'disable-plugins',
+          options(options) {
+            // @ts-ignore
+            options.plugins = options.plugins.filter(v => !['esbuild'].includes(v.name))
+
+            return options
+          },
+        },
+        Oxc.rollup({
+          sourcemap: true,
+          transform: {
+            decorator: {
+              legacy: true,
+              emitDecoratorMetadata: true,
+            },
+          },
+        }),
+      ],
     },
   },
   postcss: {
@@ -49,7 +85,7 @@ export default defineNuxtConfig({
   },
   eslint: {
     config: {
-      standalone: false,
+      stylistic: true,
     },
   },
   i18n: {

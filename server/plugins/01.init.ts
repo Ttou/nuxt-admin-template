@@ -24,7 +24,6 @@ if (!Reflect.has(BigInt.prototype, 'toJSON')) {
   })
 }
 
-
 // 接口请求
 const isApi = ({ path }: H3Event<EventHandlerRequest>) => {
   return path.startsWith('/api/')
@@ -37,12 +36,12 @@ const getLogInfo = (event: H3Event) => {
   return {
     reqId: event.context.reqId,
     reqUrl: event.path,
-    reqMethod: event.method,
+    reqMethod: event.method
   }
 }
 
 export default defineNitroPlugin(async (nitroApp) => {
-  await initServerContainer()
+  await initAppContext()
 
   nitroApp.hooks.hook('request', async (event) => {
     if (isApi(event)) {
@@ -58,6 +57,6 @@ export default defineNitroPlugin(async (nitroApp) => {
   })
 
   nitroApp.hooks.hook('close', async () => {
-    await closeServerContainer()
+    await closeAppContext()
   })
 })

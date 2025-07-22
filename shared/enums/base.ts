@@ -10,6 +10,7 @@ declare global {
 Enum.extends({
   toKeyValueMap(this: ReturnType<typeof Enum>) {
     return this.items.reduce((acc, item) => {
+      // @ts-ignore
       acc[item.key] = item.value
       return acc
     }, {})

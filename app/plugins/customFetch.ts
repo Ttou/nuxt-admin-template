@@ -1,5 +1,3 @@
-import '#shared/bigintPolyfill'
-
 export default defineNuxtPlugin((nuxtApp) => {
   const $customFetch = $fetch.create({
     baseURL: '/api',
