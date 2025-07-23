@@ -1,7 +1,7 @@
+import type { Format } from 'yoctocolors'
 import { createLogger, format, transports } from 'winston'
 import DailyRotateFile from 'winston-daily-rotate-file'
-import type { Format } from 'yoctocolors'
-import { gray, greenBright, redBright, yellowBright, white } from 'yoctocolors'
+import { gray, greenBright, redBright, white, yellowBright } from 'yoctocolors'
 
 function getColor(level: string) {
   let func: Format

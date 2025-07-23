@@ -1,6 +1,6 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { loadConfig } from 'c12';
+import { Module } from '@nestjs/common'
+import { ConfigModule } from '@nestjs/config'
+import { loadConfig } from 'c12'
 
 @Module({
   imports: [
@@ -15,9 +15,9 @@ import { loadConfig } from 'c12';
           })
 
           return config
-        }
-      ]
-    })
-  ]
+        },
+      ],
+    }),
+  ],
 })
 export class AppModule {}

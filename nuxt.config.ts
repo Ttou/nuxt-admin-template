@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     imports: {
       dirs: [
         './server/composables/**',
-        './server/container/**',
+        './server/nestjs/**',
       ],
     },
     experimental: {
@@ -64,6 +64,7 @@ export default defineNuxtConfig({
           },
         },
         Oxc.rollup({
+          resolve: false,
           sourcemap: true,
           transform: {
             decorator: {
@@ -85,7 +86,7 @@ export default defineNuxtConfig({
   },
   eslint: {
     config: {
-      stylistic: true,
+      standalone: false,
     },
   },
   i18n: {

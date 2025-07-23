@@ -1,5 +1,7 @@
 {
   "cSpell.words": [
+    "mikro",
     "nuxt"
-  ]
+  ],
+  "eslint.useFlatConfig": true
 }

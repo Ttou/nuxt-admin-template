@@ -11,6 +11,7 @@
   "dependencies": {
     "@mikro-orm/core": "^6.4.16",
     "@mikro-orm/mysql": "^6.4.16",
+    "@mikro-orm/nestjs": "^6.1.1",
     "@mikro-orm/seeder": "^6.4.16",
     "@napi-rs/canvas": "^0.1.74",
     "@nestjs/common": "^11.1.5",
@@ -41,10 +42,10 @@
     "yoctocolors": "^2.1.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.17.0",
+    "@antfu/eslint-config": "^4.18.0",
     "@element-plus/nuxt": "^1.1.4",
     "@nuxt/eslint": "^1.7.0",
-    "@nuxtjs/i18n": "^10.0.1",
+    "@nuxtjs/i18n": "^10.0.2",
     "@oxc-project/runtime": "^0.77.3",
     "@pandacss/dev": "0.54.0",
     "@pinia/nuxt": "^0.11.2",
