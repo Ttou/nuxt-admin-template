@@ -1,9 +1,9 @@
 export default defineNitroPlugin(async (nitroApp) => {
   await import('#shared/polyfills/BigIntPolyfill')
 
-  await initAppContext()
+  await initNestApp()
 
   nitroApp.hooks.hook('close', async () => {
-    await closeAppContext()
+    await closeNestApp()
   })
 })

@@ -4,7 +4,7 @@ import { AppModule } from './AppModule'
 
 export let nestApp: INestApplicationContext
 
-export async function initAppContext() {
+export async function initNestApp() {
   nestApp = await NestFactory.createApplicationContext(AppModule, {
     logger: new NestLogger(),
     abortOnError: false,
@@ -13,6 +13,6 @@ export async function initAppContext() {
   await nestApp.init()
 }
 
-export async function closeAppContext() {
+export async function closeNestApp() {
   await nestApp.close()
 }

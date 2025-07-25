@@ -1,6 +1,7 @@
+import { EntityManager } from '@mikro-orm/mysql'
+
 export function useEM() {
   const { context } = useEvent()
-  // const em = serverContainer.cradle.ormService.getEM()
 
-  // return em.fork({ loggerContext: { reqId: context.reqId } })
+  return nestApp.get(EntityManager).fork({ loggerContext: { reqId: context.reqId } })
 }

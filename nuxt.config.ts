@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     imports: {
       dirs: [
         './server/composables/**',
-        './server/nestjs/**',
+        './server/core/**',
       ],
     },
     experimental: {
@@ -99,9 +99,6 @@ export default defineNuxtConfig({
     experimental: {
       localeDetector: 'localeDetector.ts',
     },
-  },
-  pinia: {
-    storesDirs: ['./app/stores/**'],
   },
   vueTypes: {
     shim: true,

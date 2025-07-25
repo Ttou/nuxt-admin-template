@@ -1,3 +1,5 @@
+import { MikroORM } from '@mikro-orm/core'
+
 export default defineTask({
   meta: {
     name: 'orm:seed',
@@ -5,7 +7,7 @@ export default defineTask({
   },
   async run({ payload, context }) {
     if (IsDev) {
-      const orm = serverContainer.cradle.ormService.getORM()
+      const orm = nestApp.get(MikroORM)
 
       await orm.getSeeder().seed(ORMSeeder)
       return null
