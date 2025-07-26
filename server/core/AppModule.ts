@@ -27,9 +27,14 @@ import { loadConfig } from 'c12'
           driver: MySqlDriver,
           entities: [
             SysConfigEntity,
+            SysDeptEntity,
             SysDictTypeEntity,
             SysDictDataEntity,
+            SysMenuEntity,
+            SysPostEntity,
+            SysRoleEntity,
             SysTransEntity,
+            SysUserEntity,
           ],
           loggerFactory: opts => new ORMLogger(opts),
           ...configService.get('orm'),
@@ -37,6 +42,17 @@ import { loadConfig } from 'c12'
       },
       inject: [ConfigService],
     }),
+  ],
+  providers: [
+    RedisClientFactory,
+    RedisService,
+    CacheService,
+    CaptchaService,
+    JwtOptionsFactory,
+    JwtService,
+    HashOptionsFactory,
+    HashService,
+    LogoutService,
   ],
 })
 export class AppModule {}

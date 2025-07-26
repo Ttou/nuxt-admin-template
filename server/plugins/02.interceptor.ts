@@ -9,7 +9,7 @@ declare module 'h3' {
     /**
      * 当前用户
      */
-    // currentUser: SysUserEntity
+    currentUser: SysUserEntity
   }
 }
 
