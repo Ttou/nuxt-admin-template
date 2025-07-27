@@ -1,1 +1,5 @@
-export * from './TransDto'
+export * from './RemoveDto'
+export * from './SystemConfigDto'
+export * from './SystemDictDataDto'
+export * from './SystemDictTypeDto'
+export * from './SystemTransDto'

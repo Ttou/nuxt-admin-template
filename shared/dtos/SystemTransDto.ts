@@ -1,6 +1,6 @@
 import type { ILocaleEnum } from '../enums'
 import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator'
-import { BaseIdDto, BaseIdsDto, BasePageDto } from './base'
+import { BaseIdDto, BasePageDto } from './base'
 
 export class CreateTransDto {
   @IsNotEmpty()
@@ -46,5 +46,3 @@ export class FindTransAllDto {
   @IsNotEmpty()
   locale!: ILocaleEnum
 }
-
-export class RemoveTransDto extends BaseIdsDto {}

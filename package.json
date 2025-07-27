@@ -33,7 +33,7 @@
     "nuxt": "^4.0.1",
     "pinia": "^3.0.3",
     "plus-pro-components": "^0.1.26",
-    "ts-pattern": "^5.7.1",
+    "ts-pattern": "^5.8.0",
     "uuid": "^11.1.0",
     "vue-router": "^4.5.1",
     "vue-types": "^6.0.0",
@@ -51,8 +51,7 @@
     "@pinia/nuxt": "^0.11.2",
     "@types/ms": "^2.1.0",
     "@vueuse/nuxt": "^13.5.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "unplugin-oxc": "^0.4.8",
     "vue-types-nuxt": "^3.0.0"
   },

@@ -2,7 +2,12 @@
   "cSpell.words": [
     "dtos",
     "mikro",
-    "nuxt"
+    "napi",
+    "nuxt",
+    "nuxtjs",
+    "pandacss",
+    "unplugin",
+    "vueuse"
   ],
   "eslint.useFlatConfig": true
 }
